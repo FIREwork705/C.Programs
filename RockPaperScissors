@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+	int player,computer;
+	printf("请输入：1-石头 2-剪刀 3-布\n");
+	scanf_s("%d", &player);
+	if (player == 1)
+	{
+		printf("玩家出的是石头\n");
+	}
+	else if (player == 2)
+	{
+		printf("玩家出的是剪刀\n");
+	}
+	else if (player == 3)
+	{
+		printf("玩家出的是布\n");
+	}
+	else
+	{
+		printf("输入错误\n");
+	}
+	srand(time(NULL));
+	computer = rand() % 3 + 1; //（0 - 2） + 1变成（1 - 3）
+
+
+	if (player == 1 || player == 2 || player == 3)
+	{
+		if (computer == 1)
+		{
+			printf("电脑出的是石头\n");
+		}
+		else if (computer == 2)
+		{
+			printf("电脑出的是剪刀\n");
+		}
+		else if (computer == 3)
+		{
+			printf("电脑出的是布\n");
+		}
+		if ((player == 1 && computer == 2) || (player == 2 && computer == 3) || (player == 3 && computer == 1))
+		{
+			printf("玩家赢\n");
+		}
+		else if (player == computer)
+		{
+			printf("平局\n");
+		}
+		else
+		{
+			printf("电脑赢\n");
+		}
+		return 0;
+	}
+	else
+	{
+		return(0);
+	}
+
+}
