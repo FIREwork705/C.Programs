@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	printf("密码为123abcABC");
+	char letter[] = { "123abcABC\n" };//当作字符串存储
+	int length = sizeof(letter) / sizeof(char);//计算字符数组的长度
+
+	printf("加密后为：");
+	for (int i = 0; i < length - 1; i++)//因为最后一个是换行符，所以不用加密
+	{
+		if (letter[i] >= 'a' && letter[i] <= 'z')
+		{
+			letter[i] = letter[i] + 4;//这样写容易出现超出26个字母的情况
+			printf("%c", letter[i]);
+		}
+		else if (letter[i] >= 'A' && letter[i] <= 'Z')
+		{
+			letter[i] = letter[i] + 4;
+			printf("%c", letter[i]);
+		}
+		else
+		{
+			printf("%c", letter[i]);
+		}
+	}
+	return 0;
+}
