@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x1 = 0.0;
+    printf("请输入物体在x轴上的第一个点坐标：");
+    scanf_s("%lf", &x1, sizeof(x1));
+
+    double x2 = 0.0;
+    printf("请输入物体在x轴上的第二个点坐标：");
+    scanf_s("%lf", &x2, sizeof(x2));
+
+    double r = 0.0;
+    printf("请输入倍数r：");
+    scanf_s("%lf", &r, sizeof(r));
+
+    double u = 0.0;
+    printf("请输入速度u：");
+    scanf_s("%lf", &u, sizeof(u));
+
+    double t = 0.0;
+    printf("请输入时间t：");
+    scanf_s("%lf", &t, sizeof(t));
+
+    double c = 3.0e8;
+    double a = sqrt(1 - (u * u) / (c * c));
+
+    double x4 = (x2 + u * t) / a;
+    double x3 = (x1 + u * t) / a;
+    double x = x4 - x3;
+
+    double m0 = 1.0;
+    double m = m0 / a;
+
+    int t1 = 1;
+    int t2 = t1;
+
+    printf("变换后的坐标差x: %f\n", x);
+    printf("质量变化m - m0: %f\n", m - m0);
+    printf("时间差t2 - t1: %d\n", t2 - t1);
+
+   return 0;
+}
